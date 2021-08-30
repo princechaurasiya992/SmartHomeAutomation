@@ -213,7 +213,6 @@ if (isset($_SESSION['email'])) {
             border-radius: 10px;
             cursor: pointer;
 
-
         }
 
         .enter_btn:hover {
@@ -282,11 +281,12 @@ if (!isset($_SESSION['is_welcomed'])) {
         <div style="position: fixed; width: 100%; height: 110%; z-index: 120; opacity: 0.9; background-color: #000;"></div>
         <div style="position: absolute; width: 100%; height: 100%; z-index: 121;">
             <h1 style="font-size: 66px; width: 100%; color: #ec407a; text-align: center; font-family: Playball-Regular, sans-serif;">
-                We<span style="color: #fff;">book</span></h1>
+                Smart <span style="color: #fff;">Home</span></h1>
             <div class="welcome_statement"
                  style="margin-top: 20px; position: relative; padding: 0px 20px; text-align: justify; background-color: transparent; left: 50%; transform: translate(-50%,-0%); border: 5px solid #ec407a; border-radius: 10px;">
-                <h1 style="font-size: 20px; width: 100%; color: #ec407a; text-align: center;">Welcome to Webook!</h1>
-                <p style="font-size: 15px; width: 100%; color: #fff;">We welcome you to the Webook!.</p><br>
+                <h1 style="font-size: 20px; width: 100%; color: #ec407a; text-align: center;">Welcome to Smart
+                    Home!</h1>
+                <p style="font-size: 15px; width: 100%; color: #fff;">We welcome you to the Smart Home!.</p><br>
                 <p style="font-size: 15px; width: 100%; color: #fff;">By clicking on the "Enter" button, and by entering
                     this website you agree with all the above given statement.</p>
             </div>
@@ -320,7 +320,7 @@ include 'includes/header.php';
                 <div style="text-align: center; position: relative; top: 0; width: 100%;">
                     <h1 style="text-align: center; position: relative;">Temperature (in Celsius)</h1>
                     <h4 style="text-align: center; position: relative;">Status</h4>
-                    <h1 style="text-align: center; position: relative; color: #ec407a;">35 degree C</h1>
+                    <h1 id="temp" style="text-align: center; position: relative; color: #ec407a;">Checking...</h1>
                 </div>
             </div>
             <br>
@@ -328,14 +328,16 @@ include 'includes/header.php';
                 <div style="text-align: center; position: relative; top: 0; width: 100%;">
                     <h1 style="text-align: center; position: relative;">Humidity (in Percentage)</h1>
                     <h4 style="text-align: center; position: relative;">Status</h4>
-                    <h1 style="text-align: center; position: relative; color: #ec407a;">92 %</h1>
+                    <h1 id="hum" style="text-align: center; position: relative; color: #ec407a;">Checking...</h1>
                 </div>
             </div>
             <br>
             <div style="width: 100%; background-color: #eee; position: relative; padding: 16px 14px;">
                 <div style="text-align: center; position: relative; top: 0; width: 100%;">
-                    <h1 style="text-align: center; position: relative;">See if there was any intruder's activity inside your house.</h1>
-                    <a style="font-size: 20px;" href="pictures.php?page=1" name="pictures" class="button btn">Click here</a>
+                    <h1 style="text-align: center; position: relative;">See if there was any intruder's activity inside
+                        your house.</h1>
+                    <a style="font-size: 20px;" href="pictures.php?page=1" name="pictures" class="button btn">Click
+                        here</a>
                 </div>
             </div>
 
@@ -346,11 +348,16 @@ include 'includes/header.php';
                             <div style="width: 100%; height: 100%; overflow: auto; background-color: #eee; padding: 10px 16px;">
                                 <h1 style="text-align: center; position: relative;">Light 1</h1>
                                 <h4 style="text-align: center; position: relative;">Status</h4>
-                                <h1 id="appliance_status0" style="text-align: center; position: relative; color: #ec407a;">OFF</h1>
+                                <h1 id="appliance_status0"
+                                    style="text-align: center; position: relative; color: #ec407a;">OFF</h1>
                             </div>
                             <div class="applianceBtn">
-                                <button type="button" onclick="appliancesStateBtnFun(0, 1, 'appliance_status0')" class="cancelbtn-sign-up">ON</button>
-                                <button type="button" onclick="appliancesStateBtnFun(0, 0, 'appliance_status0')" class="signupbtn">OFF</button>
+                                <button type="button" onclick="appliancesStateBtnFun(0, 1, 'appliance_status0')"
+                                        class="cancelbtn-sign-up">ON
+                                </button>
+                                <button type="button" onclick="appliancesStateBtnFun(0, 0, 'appliance_status0')"
+                                        class="signupbtn">OFF
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -361,11 +368,16 @@ include 'includes/header.php';
                             <div style="width: 100%; height: 100%; overflow: auto; background-color: #eee; padding: 10px 16px;">
                                 <h1 style="text-align: center; position: relative;">Light 2</h1>
                                 <h4 style="text-align: center; position: relative;">Status</h4>
-                                <h1 id="appliance_status1" style="text-align: center; position: relative; color: #ec407a;">OFF</h1>
+                                <h1 id="appliance_status1"
+                                    style="text-align: center; position: relative; color: #ec407a;">OFF</h1>
                             </div>
                             <div class="applianceBtn">
-                                <button type="button" onclick="appliancesStateBtnFun(1, 1, 'appliance_status1')" class="cancelbtn-sign-up">ON</button>
-                                <button type="button" onclick="appliancesStateBtnFun(1, 0, 'appliance_status1')" class="signupbtn">OFF</button>
+                                <button type="button" onclick="appliancesStateBtnFun(1, 1, 'appliance_status1')"
+                                        class="cancelbtn-sign-up">ON
+                                </button>
+                                <button type="button" onclick="appliancesStateBtnFun(1, 0, 'appliance_status1')"
+                                        class="signupbtn">OFF
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -376,11 +388,16 @@ include 'includes/header.php';
                             <div style="width: 100%; height: 100%; overflow: auto; background-color: #eee; padding: 10px 16px;">
                                 <h1 style="text-align: center; position: relative;">Light 3</h1>
                                 <h4 style="text-align: center; position: relative;">Status</h4>
-                                <h1 id="appliance_status2" style="text-align: center; position: relative; color: #ec407a;">OFF</h1>
+                                <h1 id="appliance_status2"
+                                    style="text-align: center; position: relative; color: #ec407a;">OFF</h1>
                             </div>
                             <div class="applianceBtn">
-                                <button type="button" onclick="appliancesStateBtnFun(2, 1, 'appliance_status2')" class="cancelbtn-sign-up">ON</button>
-                                <button type="button" onclick="appliancesStateBtnFun(2, 0, 'appliance_status2')" class="signupbtn">OFF</button>
+                                <button type="button" onclick="appliancesStateBtnFun(2, 1, 'appliance_status2')"
+                                        class="cancelbtn-sign-up">ON
+                                </button>
+                                <button type="button" onclick="appliancesStateBtnFun(2, 0, 'appliance_status2')"
+                                        class="signupbtn">OFF
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -391,11 +408,16 @@ include 'includes/header.php';
                             <div style="width: 100%; height: 100%; overflow: auto; background-color: #eee; padding: 10px 16px;">
                                 <h1 style="text-align: center; position: relative;">Fan 1</h1>
                                 <h4 style="text-align: center; position: relative;">Status</h4>
-                                <h1 id="appliance_status3" style="text-align: center; position: relative; color: #ec407a;">OFF</h1>
+                                <h1 id="appliance_status3"
+                                    style="text-align: center; position: relative; color: #ec407a;">OFF</h1>
                             </div>
                             <div class="applianceBtn">
-                                <button type="button" onclick="appliancesStateBtnFun(3, 1, 'appliance_status3')" class="cancelbtn-sign-up">ON</button>
-                                <button type="button" onclick="appliancesStateBtnFun(3, 0, 'appliance_status3')" class="signupbtn">OFF</button>
+                                <button type="button" onclick="appliancesStateBtnFun(3, 1, 'appliance_status3')"
+                                        class="cancelbtn-sign-up">ON
+                                </button>
+                                <button type="button" onclick="appliancesStateBtnFun(3, 0, 'appliance_status3')"
+                                        class="signupbtn">OFF
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -410,7 +432,10 @@ include 'includes/navbar_script.php';
     <script>
         document.getElementById("home").classList.add("active");
     </script>
+
+    <script src="js/temp_and_hum_script.js"></script>
     <script src="js/appliances_control_script.js"></script>
+
     <?php
 }
 ?>

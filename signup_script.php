@@ -20,29 +20,29 @@ if (strlen($name) == 0) {
     echo "Invalid mobile number!";
 } else {
 
-$email = mysqli_real_escape_string($con, $email);
-$name = mysqli_real_escape_string($con, $_POST['name']);
-$phone = mysqli_real_escape_string($con, $_POST['phone']);
-$password = mysqli_real_escape_string($con, $password);
-$secured_password = md5($password);
+    $email = mysqli_real_escape_string($con, $email);
+    $name = mysqli_real_escape_string($con, $_POST['name']);
+    $phone = mysqli_real_escape_string($con, $_POST['phone']);
+    $password = mysqli_real_escape_string($con, $password);
+    $secured_password = md5($password);
 
 //This query is written just to check whether a user is already registered.
-$user_select_query = "SELECT * FROM users WHERE email_id='$email'";
-$user_select_result = mysqli_query($con, $user_select_query) or die(mysqli_error($con));
-if (mysqli_num_rows($user_select_result) > 0) {
-    echo "Email id already exists!";
-} else {
+    $user_select_query = "SELECT * FROM users WHERE email_id='$email'";
+    $user_select_result = mysqli_query($con, $user_select_query) or die(mysqli_error($con));
+    if (mysqli_num_rows($user_select_result) > 0) {
+        echo "Email id already exists!";
+    } else {
 
-    //Now, since the user is not registered before, so we insert the users information into database.
-    $user_registration_query = "insert into users(email_id, name, phone, password, photo) values ('$email', '$name', '$phone', '$secured_password', '')";
-    $user_registration_submit = mysqli_query($con, $user_registration_query) or die(mysqli_error($con));
-    $_SESSION['email'] = $email;
-    $_SESSION['id'] = mysqli_insert_id($con);
-    
-    if (!empty($_POST['remember'])) {
+        //Now, since the user is not registered before, so we insert the users information into database.
+        $user_registration_query = "insert into users(email_id, name, phone, password, photo) values ('$email', '$name', '$phone', '$secured_password', '')";
+        $user_registration_submit = mysqli_query($con, $user_registration_query) or die(mysqli_error($con));
+        $_SESSION['email'] = $email;
+        $_SESSION['id'] = mysqli_insert_id($con);
+
+        if (!empty($_POST['remember'])) {
             $_SESSION['remember_login'] = "true";
+        }
+        echo "You are successfully registered!";
     }
-    echo "You are successfully registered!";
-}
 }
 ?>

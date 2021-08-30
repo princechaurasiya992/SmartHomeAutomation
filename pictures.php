@@ -299,7 +299,8 @@ include 'includes/header.php';
         <div class="jumbotron text-center">
             <h1 style="color: #ec407a">Intruder's Pictures</h1>
             <p><?php echo $total_pictures; ?> Photos</p>
-            <a style="font-size: 20px; margin: 5px;" onclick="manualCamBtnFun()" name="" class="button btn">Click a picture manually</a>
+            <a style="font-size: 20px; margin: 5px;" onclick="manualCamBtnFun()" name="" class="button btn">Click a
+                picture manually</a>
         </div>
 
         <div style="width: 100%; overflow: auto; background-color: #eee; padding: 10px 16px;">
@@ -343,7 +344,6 @@ include 'includes/header.php';
                 <div class="myImgContainer">
                     <div style="height: 100%; width: 100%; position: absolute; top: 0; padding: 10px;">
                         <div class="image">
-
                             <img style="width: 100%; height: 100%; object-fit: cover;" id="myImg<?php echo $i + 1; ?>"
                                  src="img/pictures/<?php echo $picture_array[$pic]; ?>" alt="picture">
                             <div class="picture-option-block" id="pictureOptionBlock<?php echo $i + 1; ?>">
@@ -351,12 +351,13 @@ include 'includes/header.php';
                                     <li><a>Delete</a></li>
                                 </ul>
                             </div>
-                            <div class="picture-option-btn-block" onclick="pictureOptionBtnFunction('pictureOptionBtn<?php echo $i + 1; ?>', 'pictureOptionBlock<?php echo $i + 1; ?>')"><span id="pictureOptionBtn<?php echo $i + 1; ?>"
-                                                                    class="bi bi-three-dots-vertical"></span></div>
+                            <div class="picture-option-btn-block"
+                                 onclick="pictureOptionBtnFunction('pictureOptionBtn<?php echo $i + 1; ?>', 'pictureOptionBlock<?php echo $i + 1; ?>')"><span
+                                        id="pictureOptionBtn<?php echo $i + 1; ?>"
+                                        class="bi bi-three-dots-vertical"></span></div>
                             <p class="text-block-caption" style="text-align: left;">Captured On
                                 <span style="color: #ec407a;"><?php echo date('jS M-Y h:i A', strtotime('+5 hour +30 minutes', strtotime($picture_date_array[$pic]))); ?></span>
                             </p>
-
                         </div>
                     </div>
 
@@ -642,7 +643,6 @@ include 'includes/footer.php';
 </script>
 <script src="js/optionBtnScript.js"></script>
 <script src="js/manual_cam_script.js"></script>
-<script src="js/pir_cam_script.js"></script>
 
 </body>
 </html>

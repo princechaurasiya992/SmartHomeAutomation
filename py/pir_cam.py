@@ -5,7 +5,7 @@ import datetime
 import pymysql
 import pymysql.cursors
 
-pir = MotionSensor(4)
+pir = MotionSensor(23)
 
 camera = PiCamera()
 
